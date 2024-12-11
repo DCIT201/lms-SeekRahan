@@ -1,10 +1,11 @@
+
 public class Book {
-     private String bookId;
-     private String title;
-     private String genre;
-     private String author;
-     private boolean status;
-   
+    private final String bookId;
+    private final String title;
+    private String genre;
+    private final String author;
+    private boolean status;
+
 
     // Constructor
     public Book(String bookId, String title, String author) {
@@ -35,8 +36,6 @@ public class Book {
         this.status = status;
     }
 }
-
-
 
 
 
