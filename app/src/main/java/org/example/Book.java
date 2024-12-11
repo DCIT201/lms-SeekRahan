@@ -38,24 +38,6 @@ public class Book {
 
 
 
-public class Patron {
-    private String name;
-    private int id;
 
-    // Constructor
-    public Patron(String name, int id) {
-        this.name = name;
-        this.id = id;
-    }
 
-    // Methods to borrow and return books
-    public void borrowBook(Library library, String isbn) {
-        // Implement logic to borrow a book from the library
-    }
-
-    public void returnBook(Library library, String isbn) {
-        // Implement logic to return a book to the library
-    }
-}
-
-    }
+    
