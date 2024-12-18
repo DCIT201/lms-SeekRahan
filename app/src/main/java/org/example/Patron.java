@@ -1,51 +1,41 @@
+package org.example;
+
 import java.util.ArrayList;
-import java.util.List;
 
 public class Patron {
-    private final String patronId;
     private final String name;
-    private final String email;
-    private final String phone;
-    private final List<String> borrowedBookIds; // List of borrowed book IDs
+    private final ArrayList<Book> borrowedBooks;
 
-    // Constructor
-    public Patron(String patronId, String name, String email, String phone) {
-        this.patronId = patronId;
+    public Patron(String name, int id) {
         this.name = name;
-        this.email = email;
-        this.phone = phone;
-        this.borrowedBookIds = new ArrayList<>();
+        borrowedBooks = new ArrayList<>();
     }
 
-    // Borrow a book
-    public void borrowBook(String bookId) {
-        borrowedBookIds.add(bookId);
+    public void borrowBook(Book book, Library library) {
+        if (library.removeBook(book.title())) {
+            borrowedBooks.add(book);
+            System.out.println(name + " borrowed " + book.title());
+        } else {
+            System.out.println("Book not available.");
+        }
     }
 
-
-    public void returnBook(String bookId) {
-        borrowedBookIds.remove(bookId);
+    public void returnBook(Book book, Library library) {
+        if (borrowedBooks.remove(book)) {
+            library.addBook(book);
+            System.out.println(name + " returned " + book.title());
+        } else {
+            System.out.println("You don't have this book.");
+        }
     }
 
-
-    public List<String> listBorrowedBooks() {
-        return borrowedBookIds;
-    }
-
-    // Getters and Setters
-    public String getPatronId() {
-        return patronId;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPhone() {
-        return phone;
+    public void listBorrowedBooks() {
+        if (borrowedBooks.isEmpty()) {
+            System.out.println("No books borrowed.");
+        } else {
+            for (Book book : borrowedBooks) {
+                System.out.println(book.title());
+            }
+        }
     }
 }
