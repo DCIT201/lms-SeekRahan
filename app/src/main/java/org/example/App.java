@@ -1,4 +1,3 @@
-
 package org.example;
 
 public class App {
@@ -8,20 +7,31 @@ public class App {
 
     public static void main(String[] args) {
         System.out.println(new App().getGreeting());
-
-
         Library library = new Library();
-        Patron patron1 = new Patron("Alice", "123","alic@hi.com","02038489");
-        Patron patron2 = new Patron("Bob", "456","bob@hrt.com","0283449");
 
-        library.addBook(new Book("ISBN123", "The Lord of the Rings", "J.R.R. Tolkien"));
-        library.addBook(new Book("ISBN456", "Harry Potter", "J.K. Rowling"));
+        // Add books to the library
+        library.addBook(new Book("A teacher's salary", "Joe Grey", 2024));
+        library.addBook(new Book("Data Structures", "Jack math", 1949));
 
-        patron1.borrowBook("ISBN123");
+        // List all books
+        System.out.println("Books in the library:");
+        library.listBooks();
 
-        patron2.borrowBook("ISBN123");
+        // Create a patron
+        Patron patron = new Patron("Ali", 1);
 
-        patron1.returnBook( "ISBN123");
+        // Borrow a book
+        patron.borrowBook(new Book("A teacher's salary", "Joe Grey", 2024), library);
+
+        // List borrowed books
+        System.out.println("\nBorrowed books:");
+        patron.listBorrowedBooks();
+
+        // Return a book
+        patron.returnBook(new Book("A teacher's salary", "Joe Grey", 2024), library);
+
+        // Final library state
+        System.out.println("\nBooks in the library after operations:");
+        library.listBooks();
     }
 }
-    
