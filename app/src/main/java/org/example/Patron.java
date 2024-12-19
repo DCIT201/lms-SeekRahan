@@ -12,7 +12,7 @@ public class Patron {
     }
     
 
-    public void borrowBook(Book book, Library library) {
+    public void borrowBook(Book book) {
         if (library.removeBook(book.title())) {
             borrowedBooks.add(book);
             System.out.println(name + " borrowed " + book.title());
@@ -22,7 +22,7 @@ public class Patron {
     }
 
     
-    public void returnBook(Book book, Library library) {
+    public void returnBook(Book book) {
         if (borrowedBooks.remove(book)) {
             library.addBook(book);
             System.out.println(name + " returned " + book.title());
