@@ -1,6 +1,5 @@
-public class Book {
 package org.example;
-
+public class Book {
     // This is your working class.
 
 /**
@@ -9,5 +8,6 @@ package org.example;
 public record Book(String title, String author, int yearPublished) {
     // Constructor
     // Initialize the field
-}
+    }
     
+}
