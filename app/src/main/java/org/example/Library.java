@@ -3,7 +3,7 @@ package org.example;
 import java.util.ArrayList;
 
 public class Library {
-    private final ArrayList<Book> books;
+    private ArrayList<Book> books;
     
 
     public Library() {
@@ -17,7 +17,7 @@ public class Library {
     
 
     public boolean removeBook(String title) {
-        return books.removeIf(book -> book.title().equals(title));
+        return books.removeIf(book -> book.getTitle().equals(title));
     }
 
     
@@ -26,7 +26,7 @@ public class Library {
         if (books.isEmpty()) {
             System.out.println("No books available.");
         } else {for (Book book : books) {
-                System.out.println(book.title());
+                System.out.println(book.getTitle());
         }     
     }
 }
