@@ -21,14 +21,14 @@ public class App {
         Patron patron = new Patron("Ali", 1);
 
         // Borrow a book
-        patron.borrowBook(new Book("A teacher's salary", "Joe Grey", 2024), library);
+        patron.borrowBook(new Book("A teacher's salary", "Joe Grey", 2024));
 
         // List borrowed books
         System.out.println("\nBorrowed books:");
         patron.listBorrowedBooks();
 
         // Return a book
-        patron.returnBook(new Book("A teacher's salary", "Joe Grey", 2024), library);
+        patron.returnBook(new Book("A teacher's salary", "Joe Grey", 2024));
 
         // Final library state
         System.out.println("\nBooks in the library after operations:");
