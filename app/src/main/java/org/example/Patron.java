@@ -13,9 +13,9 @@ public class Patron {
     
 
     public void borrowBook(Book book) {
-        if (library.removeBook(book.title())) {
+        if (library.removeBook(book.getTitle())) {
             borrowedBooks.add(book);
-            System.out.println(name + " borrowed " + book.title());
+            System.out.println(name + " borrowed " + book.getTitle());
         } else {
             System.out.println("Book not available.");
         }
@@ -25,7 +25,7 @@ public class Patron {
     public void returnBook(Book book) {
         if (borrowedBooks.remove(book)) {
             library.addBook(book);
-            System.out.println(name + " returned " + book.title());
+            System.out.println(name + " returned " + book.getTitle());
         } else {
             System.out.println("You don't have this book.");
         }
@@ -37,7 +37,7 @@ public class Patron {
             System.out.println("No books borrowed.");
         } else {
             for (Book book : borrowedBooks) {
-                System.out.println(book.title());
+                System.out.println(book.getTitle());
             }
         }
     }
