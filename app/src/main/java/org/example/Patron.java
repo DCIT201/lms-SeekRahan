@@ -10,6 +10,7 @@ public class Patron {
         this.name = name;
         borrowedBooks = new ArrayList<>();
     }
+    
 
     public void borrowBook(Book book, Library library) {
         if (library.removeBook(book.title())) {
@@ -20,6 +21,7 @@ public class Patron {
         }
     }
 
+    
     public void returnBook(Book book, Library library) {
         if (borrowedBooks.remove(book)) {
             library.addBook(book);
@@ -28,6 +30,7 @@ public class Patron {
             System.out.println("You don't have this book.");
         }
     }
+    
 
     public void listBorrowedBooks() {
         if (borrowedBooks.isEmpty()) {
