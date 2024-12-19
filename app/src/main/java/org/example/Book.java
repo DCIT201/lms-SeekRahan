@@ -1,6 +1,9 @@
 package org.example;
 public class Book {
-    // This is your working class.
+    private String title;
+    private String author;
+    private int yearPublished;
+    // This is your working class
 
 /**
  * @param yearPublished Add this field
