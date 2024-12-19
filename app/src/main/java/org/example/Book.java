@@ -5,6 +5,18 @@ public class Book {
     private int yearPublished;
     // This is your working class
 
+    public String getTitle(){
+        return title;
+    }
+    
+    public String getAuthor(){
+        return author;
+    }
+    public int getYearPublished(){
+        reutrn yearPublished;
+    }
+    
+
 /**
  * @param yearPublished Add this field
  */
